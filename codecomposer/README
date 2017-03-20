@@ -1,0 +1,4 @@
+June 1, 2016
+
+* The install script called for the 71-ti-permissions.rules file be chmod 644 after copying.
+* The script then does "service udev restart"

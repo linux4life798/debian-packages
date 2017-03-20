@@ -1,0 +1,28 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+# Source: <source package name; defaults to package name>
+Section: misc
+Priority: optional
+# Homepage: <enter URL here; no default>
+Standards-Version: 3.9.2
+
+Package: codecomposer-dep
+# Version: <enter version here; defaults to 1.0>
+Version: 1.1
+Maintainer: Craig Hesling <craig@hesling.com>
+# Pre-Depends: <comma-separated list of packages>
+# Depends: <comma-separated list of packages>
+Depends: libc6:i386, libx11-6:i386, libasound2:i386, libatk1.0-0:i386, libcairo2:i386, libcups2:i386, libdbus-glib-1-2:i386, libgconf-2-4:i386, libgdk-pixbuf2.0-0:i386, libgtk-3-0:i386, libice6:i386, libncurses5:i386, libsm6:i386, liborbit2:i386, libudev1:i386, libusb-0.1-4:i386, libstdc++6:i386, libxt6:i386, libxtst6:i386, libgnomeui-0:i386, libusb-1.0-0-dev:i386, libcanberra-gtk-module:i386, gtk2-engines-murrine:i386, unzip, libgcrypt20:i386, gnome-themes-standard:i386, gtk2-engines-pixbuf:i386
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+# Architecture: all
+# Multi-Arch: <one of: foreign|same|allowed>
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: <short description; defaults to some wise words> 
