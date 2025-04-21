@@ -1,9 +1,9 @@
 #!/bin/bash
 # Script to download Ghidra for building the Debian package
-# Default version is 10.4, but can be changed by passing a parameter
+# Default version is 11.3.2, but can be changed by passing a parameter
 
-VERSION=${1:-10.4}
-RELEASE_DATE=${2:-20230928}
+VERSION=${1:-11.3.2}
+RELEASE_DATE=${2:-20250415}
 
 echo "Downloading Ghidra ${VERSION} (build date: ${RELEASE_DATE})..."
 wget -c "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${VERSION}_build/ghidra_${VERSION}_PUBLIC_${RELEASE_DATE}.zip"
