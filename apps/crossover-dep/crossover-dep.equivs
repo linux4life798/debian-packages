@@ -1,0 +1,41 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+# Source: <source package name; defaults to package name>
+Section: misc
+Priority: optional
+# Homepage: <enter URL here; no default>
+Standards-Version: 3.9.2
+
+Package: crossover-dep
+Version: 4.2
+Maintainer: Craig Hesling <craig@hesling.com>
+# Pre-Depends: <comma-separated list of packages>
+#Depends: libssl1.0.0:i386,libgphoto2-6:i386,libcapi20-3:i386,libgsm1:i386,libgstreamer-plugins-base0.10-0:i386,libgstreamer0.10-0:i386,libldap-2.4-2:i386,libmpg123-0:i386,libopenal1:i386,libosmesa6:i386,libsane:i386,libv4l-0:i386,libxcomposite1:i386,libxinerama1:i386,libxslt1.1:i386
+# Resulting list was generated from running the following command:
+# /opt/cxoffice/bin/cxdiag |grep "^\"Title.*.so"|awk '//{print $3}' | { while read in; do apt-file search $in; done; }
+
+# Nov 27, 2017 depends: libcapi20-3, libcapi20-3:i386, libnss-mdns:i386, libnss-mdns:i386, libgphoto2-6:i386, libv4l-0:i386, libsane:i386
+# Nov 27, 2017 depends(installed in desktoppspecific-dep): nvidia-driver-libs-i386
+
+Depends: libcapi20-3, libcapi20-3:i386, libnss-mdns:i386, libgphoto2-6:i386, libv4l-0:i386, libsane:i386, libncurses5:i386
+
+#Depends: libnss-mdns:i386, libcapi20-3:i386, libfontconfig1:i386, libgphoto2-6:i386, libgsm1:i386, libgstreamer-plugins-base0.10-0:i386, libgstreamer0.10-0:i386, libldap-2.4-2:i386, libmpg123-0:i386, libopenal1:i386, libosmesa6:i386, libsane:i386, libtiff5:i386, libv4l-0:i386, libxcomposite1:i386, libxinerama1:i386, libxml2:i386, libxslt1.1:i386, libssl1.0.2:i386
+
+# libssl1.0.0:i386 - this cannot be installed, since it says it is purley virtual...
+
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+# Architecture: all
+Architecture: amd64
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: i386 dependencies for crossover
+ long description and info
+ .
+ second paragraph
