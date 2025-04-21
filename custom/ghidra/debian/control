@@ -1,0 +1,19 @@
+Source: ghidra
+Section: devel
+Priority: optional
+Maintainer: Craig Hesling <craig@hesling.com>
+Build-Depends: debhelper-compat (= 13), ca-certificates, openjdk-17-jdk
+Standards-Version: 4.6.0
+Homepage: https://ghidra-sre.org
+Vcs-Browser: https://github.com/NationalSecurityAgency/ghidra
+Vcs-Git: https://github.com/NationalSecurityAgency/ghidra.git
+Rules-Requires-Root: no
+
+Package: ghidra
+Architecture: amd64 arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}, default-jre, ca-certificates-java
+Description: Software Reverse Engineering (SRE) suite
+ Ghidra is a software reverse engineering (SRE) suite of tools developed
+ by NSA's Research Directorate in support of the Cybersecurity mission.
+ It provides a comprehensive suite of tools for analyzing compiled code
+ and firmware on various processor architectures.

@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+# Enabling DH_VERBOSE forces the logging of all build steps and commands.
+# See debhelper(7) for more info.
+export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	# No build needed, using pre-built binary
+
+override_dh_auto_install:
+	# Extract the Ghidra zip to the debian/ghidra directory
+	mkdir -p debian/ghidra/usr/lib
+	unzip $(CURDIR)/ghidra_*_PUBLIC_*.zip -d debian/ghidra/usr/lib/
+	mv debian/ghidra/usr/lib/ghidra_*_PUBLIC debian/ghidra/usr/lib/ghidra
+
+	# Create the bin directory and wrapper scripts
+	mkdir -p debian/ghidra/usr/bin
+	cp debian/launchers/ghidra.sh debian/ghidra/usr/bin/ghidra
+	cp debian/launchers/ghidra-analyze-headless.sh debian/ghidra/usr/bin/ghidra-analyze-headless
+
+	# Create desktop file
+	mkdir -p debian/ghidra/usr/share/applications
+	cp debian/launchers/ghidra.desktop debian/ghidra/usr/share/applications/
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod +x debian/ghidra/usr/lib/ghidra/ghidraRun
+	chmod +x debian/ghidra/usr/lib/ghidra/support/analyzeHeadless
+	chmod +x debian/ghidra/usr/bin/ghidra
+	chmod +x debian/ghidra/usr/bin/ghidra-analyze-headless
+
+clean:
+	$(RM) -r debian/ghidra

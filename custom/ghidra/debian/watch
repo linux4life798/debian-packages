@@ -1,0 +1,4 @@
+version=4
+opts="filenamemangle=s/.*\/Ghidra_(\d+\.\d+(?:\.\d+)?)_build\/ghidra_$1_PUBLIC_(\d+)\.zip/ghidra-$1-$2.zip/" \
+  https://github.com/NationalSecurityAgency/ghidra/releases \
+  .*/Ghidra_(\d+\.\d+(?:\.\d+)?)_build/ghidra_\1_PUBLIC_\d+\.zip
