@@ -6,11 +6,17 @@ Priority: optional
 # Homepage: <enter URL here; no default>
 Standards-Version: 3.9.2
 
-Package: fpgadev-dep
-Version: 1.0
-# Maintainer: Your Name <yourname@example.com>
+Package: dropbox-dep
+Version: 1.1
+aintainer: Craig Hesling <craig@hesling.com>
 # Pre-Depends: <comma-separated list of packages>
-Depends: yosys, yosys-doc, arachne-pnr, fpga-icestorm, fpga-icestorm-chipdb
+
+# I had to install the following to install dropbox:
+# * libpango1.0-0 (a meta transitional lib from bookwork) I installed manually via deb
+# * python3-gpg dropbox UI said it uses this to verify packages it downloads
+# * The 2024 debian packge itself
+# * There was a nautilus package that I didn't install
+Depends: python3-gpg
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
 # Provides: <comma-separated list of packages>
@@ -21,8 +27,8 @@ Depends: yosys, yosys-doc, arachne-pnr, fpga-icestorm, fpga-icestorm-chipdb
 # Changelog: <changelog file; defaults to a generic changelog>
 # Readme: <README.Debian file; defaults to a generic one>
 # Extra-Files: <comma-separated list of additional files for the doc directory>
+# Links: <pair of space-separated paths; First is path symlink points at, second is filename of link>
 # Files: <pair of space-separated paths; First is file to include, second is destination>
 #  <more pairs, if there's more than one file to include. Notice the starting space>
-Description: Depends on tools for developing on FPGAs
- This package depends on packages needed for developing on FPGAs
- (namely the ICE40).
+Description: Depends on packages needed for dropbox to function.
+  Confirmed on April 2024.
