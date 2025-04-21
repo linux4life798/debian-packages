@@ -1,0 +1,34 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+# Source: <source package name; defaults to package name>
+Section: misc
+Priority: optional
+# Homepage: <enter URL here; no default>
+Standards-Version: 3.9.2
+
+Package: school-dep
+# Version: <enter version here; defaults to 1.0>
+Version: 3.20
+Maintainer: Craig Hesling <craig@hesling.com>
+# Pre-Depends: <comma-separated list of packages>
+#Depends: nodejs, avr-libc, gdb-avr, avrdude, minicom, binutils-avr, binutils-dev, python3-networkx, python3-matplotlib, weka, weka-doc
+# Android and gcc-arm-linux-gnueabi was for Real time Embedded Systems
+#Depends: nodejs, avr-libc, gdb-avr, avrdude, minicom, binutils-avr, binutils-dev, python3-networkx, python3-matplotlib, weka, weka-doc, gcc-arm-linux-gnueabi, android-sdk-platform-tools, octave, liboctave-dev, octave-communications
+# Wireless needs numpy
+Depends: python3-matplotlib, python-numpy, python3-numpy, pylint, pylint3, octave, liboctave-dev, octave-communications, pandoc, nvidia-cuda-toolkit, nvidia-nsight, freeglut3-dev, mpi-default-bin, mpi-default-dev, openmpi-doc, libpfm4-dev, pdfposter
+#Depends: python3-matplotlib, python-numpy, python3-numpy, pylint, pylint3, octave, liboctave-dev, octave-communications, pandoc, clang, llvm, lldb, lld, clang-5.0, clang-tools-5.0, clang-5.0-doc, llvm-5.0, llvm-5.0-tools, llvm-5.0-doc, lld-5.0, nvidia-cuda-toolkit
+# lldb-5.0 has unmet dependencies
+
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+# Architecture: all
+# Multi-Arch: <one of: foreign|same|allowed>
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: Depends on tools needed to develope for school projects`
