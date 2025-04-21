@@ -1,8 +1,9 @@
-ghidra (11.3.2) UNRELEASED; urgency=medium
+ghidra (11.3.2-3) UNRELEASED; urgency=medium
 
   * Bump version to 11.3.2
+  * Use pkg install file to install launcher executables
 
- -- Craig Hesling <craig@hesling.com>  Mon, 21 Apr 2025 15:08:29 -0700
+ -- Craig Hesling <craig@hesling.com>  Mon, 21 Apr 2025 15:29:44 -0700
 
 ghidra (10.4-2) unstable; urgency=medium
 

@@ -1,1 +1,3 @@
-# No additional files to install as rules handles the installation
+debian/launchers/ghidra usr/bin
+debian/launchers/ghidra-analyze-headless usr/bin
+debian/launchers/ghidra.desktop usr/share/applications
