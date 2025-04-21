@@ -16,21 +16,17 @@ override_dh_auto_install:
 	unzip $(CURDIR)/ghidra_*_PUBLIC_*.zip -d debian/ghidra/usr/lib/
 	mv debian/ghidra/usr/lib/ghidra_*_PUBLIC debian/ghidra/usr/lib/ghidra
 
-	# Create the bin directory and wrapper scripts
-	mkdir -p debian/ghidra/usr/bin
-	cp debian/launchers/ghidra.sh debian/ghidra/usr/bin/ghidra
-	cp debian/launchers/ghidra-analyze-headless.sh debian/ghidra/usr/bin/ghidra-analyze-headless
+	# Use install command to create directories and copy files
+	install -Dm755 debian/launchers/ghidra.sh debian/ghidra/usr/bin/ghidra
+	install -Dm755 debian/launchers/ghidra-analyze-headless.sh debian/ghidra/usr/bin/ghidra-analyze-headless
+	install -Dm644 debian/launchers/ghidra.desktop debian/ghidra/usr/share/applications/ghidra.desktop
+	dh_auto_install
 
-	# Create desktop file
-	mkdir -p debian/ghidra/usr/share/applications
-	cp debian/launchers/ghidra.desktop debian/ghidra/usr/share/applications/
 
 override_dh_fixperms:
 	dh_fixperms
 	chmod +x debian/ghidra/usr/lib/ghidra/ghidraRun
 	chmod +x debian/ghidra/usr/lib/ghidra/support/analyzeHeadless
-	chmod +x debian/ghidra/usr/bin/ghidra
-	chmod +x debian/ghidra/usr/bin/ghidra-analyze-headless
 
 clean:
 	$(RM) -r debian/ghidra
