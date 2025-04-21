@@ -21,6 +21,7 @@ dpkg-buildpackage -b --no-sign
 
 # Debian Tools
 
+* Source Browser - https://sources.debian.org
 * CodeSearch - https://codesearch.debian.net
 
   Example: https://codesearch.debian.net/search?q=--buildsystem%3Dgradle
