@@ -19,6 +19,14 @@ dpkg-buildpackage -b --no-sign
 * Increment revision - `debchange -i` and then run `debchange -r` when you are
   ready to actually release it.
 
+# Debian Tools
+
+* CodeSearch - https://codesearch.debian.net
+
+  Example: https://codesearch.debian.net/search?q=--buildsystem%3Dgradle
+* Packages Search - https://packages.debian.org
+* Packages Git - http://salsa.debian.org
+
 
 ## References
 
