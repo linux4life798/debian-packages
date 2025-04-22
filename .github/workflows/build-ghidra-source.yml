@@ -1,0 +1,30 @@
+on:
+  workflow_dispatch:
+jobs:
+  build-ghidra-source:
+    name: Build Ghidra from Source
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Ghidra Source
+      uses: actions/checkout@v4
+      with:
+        repository: NationalSecurityAgency/ghidra
+        ref: master
+    - name: Install Prerequisites
+      run: sudo apt install -y default-jdk gradle
+        # openjdk-17-jdk
+    - name: Download Build Dependencies
+      run: gradle -I gradle/support/fetchDependencies.gradle
+    - name: Build Ghidra
+      run: gradle buildGhidra
+    - name: Upload Ghidra
+      uses: actions/upload-artifact@v4
+      with:
+        name: ghidra-source
+        path: .
+    - name: Upload Ghidra Build
+      uses: actions/upload-artifact@v4
+      with:
+        name: ghidra-build
+        path: build/dist
+
