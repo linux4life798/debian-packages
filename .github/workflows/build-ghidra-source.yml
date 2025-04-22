@@ -12,7 +12,7 @@ jobs:
         repository: NationalSecurityAgency/ghidra
         ref: master
     - name: Install Prerequisites
-      run: sudo apt install -y default-jdk
+      run: sudo apt install -y default-jdk python3 build-essential
         # Debian and Ubuntu's gradle version is 4.4.1-22, but Ghidra requires
         # and errors out if the version is not at least 8.5. Ghidra provides
         # a stand-in gradlew wrapper that can download and substitute a newer
