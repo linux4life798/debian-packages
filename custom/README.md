@@ -19,6 +19,16 @@ dpkg-buildpackage -b --no-sign
 * Increment revision - `debchange -i` and then run `debchange -r` when you are
   ready to actually release it.
 
+
+## Check `watch` File
+
+```bash
+uscan --report-status; echo Status $?
+
+# Simply use return code:
+uscan --no-download && echo "Update available" || echo "Update not available"
+```
+
 # Debian Tools
 
 * Source Browser - https://sources.debian.org
@@ -27,8 +37,10 @@ dpkg-buildpackage -b --no-sign
   Example: https://codesearch.debian.net/search?q=--buildsystem%3Dgradle
 * Packages Search - https://packages.debian.org
 * Packages Git - http://salsa.debian.org
+* Package Tracking and Developer Info - https://tracker.debian.org
 
 
 ## References
 
 * https://github.com/psanford/tpm-fido/pull/35
+* Files under `debian/` dir - https://www.debian.org/doc/manuals/maint-guide/dother.en.html
