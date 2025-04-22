@@ -6,7 +6,7 @@
 # Install build dependencies (packages needed to build this package).
 # You can build this in a docker container, if you don't like the idea of
 # polluting you manually installed package list.
-sudo apt build-dep .
+sudo apt-get build-dep .
 
 # Build the package.
 dpkg-buildpackage -b --no-sign
