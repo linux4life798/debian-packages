@@ -2,7 +2,7 @@ Source: ghidra
 Section: devel
 Priority: optional
 Maintainer: Craig Hesling <craig@hesling.com>
-Build-Depends: debhelper-compat (= 13), ca-certificates, openjdk-17-jdk
+Build-Depends: debhelper-compat (= 13), ca-certificates, openjdk-17-jdk, unzip
 Standards-Version: 4.6.0
 Homepage: https://ghidra-sre.org
 Vcs-Browser: https://github.com/NationalSecurityAgency/ghidra
