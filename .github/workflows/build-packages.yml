@@ -3,14 +3,21 @@ on:
     branches:
     - main
     - release/*
+  workflow_dispatch:
 jobs:
-  my_job:
-    name: deploy to staging
-    runs-on: ubuntu-22.04
+  build-custom-packages:
+    name: Build Custom Packages
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Install Prereq Packages
-      run: |
-        apt build-dep packages/custom/ghidra
-      
+    - name: Install Prerequisites
+      working-directory: custom/ghidra
+      run: sudo apt-get build-dep -y .
+    - name: Build Packages
+      working-directory: custom/ghidra
+      run: dpkg-buildpackage -b --no-sign
+    - name: Upload Packages
+      uses: actions/upload-artifact@v4
+      with:
+        path: custom/ghidra*.deb
