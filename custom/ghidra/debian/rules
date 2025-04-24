@@ -15,6 +15,12 @@ override_dh_auto_install:
 	mkdir -p debian/ghidra/usr/lib
 	unzip $(CURDIR)/ghidra_*_PUBLIC_*.zip -d debian/ghidra/usr/lib/
 	mv debian/ghidra/usr/lib/ghidra_*_PUBLIC debian/ghidra/usr/lib/ghidra
+
+	# Create /etc/ghidra directory, move launch.properties there, and symlink it
+	mkdir -p debian/ghidra/etc/ghidra
+	mv debian/ghidra/usr/lib/ghidra/support/launch.properties debian/ghidra/etc/ghidra/
+	ln -s /etc/ghidra/launch.properties debian/ghidra/usr/lib/ghidra/support/launch.properties
+
 	dh_auto_install
 
 
