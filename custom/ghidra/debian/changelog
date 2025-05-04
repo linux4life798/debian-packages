@@ -1,11 +1,15 @@
-ghidra (11.3.2-5) UNRELEASED; urgency=medium
+ghidra (11.3.2-7) UNRELEASED; urgency=medium
 
   * Bump version to 11.3.2
   * Use pkg install file to install launcher executables
   * Fix launcher script target mixup
   * Move launch.properties to /etc as a conffile
+  * Remove redundant conffile definition, since dh_installdeb auto adds /etc
+    files to conffile.
+  * Remove execute permission from jar file, due to lintian complaint
+  * Move ghidra from /usr/lib to /usr/share
 
- -- Craig Hesling <craig@hesling.com>  Thu, 24 Apr 2025 15:27:06 -0700
+ -- Craig Hesling <craig@hesling.com>  Sun, 04 May 2025 13:57:07 -0700
 
 ghidra (10.4-2) unstable; urgency=medium
 
