@@ -13,7 +13,7 @@ jobs:
         ref: master
     - name: Install Prerequisites
       # run: sudo apt install -y openjdk-17-jdk python3 build-essential
-      run: apt install -y default-jdk default-jre python3 build-essential
+      run: sudo apt install -y default-jdk default-jre python3 build-essential
       # run: sudo apt install -y default-jdk python3 build-essential
         # Debian and Ubuntu's gradle version is 4.4.1-22, but Ghidra requires
         # and errors out if the version is not at least 8.5. Ghidra provides
