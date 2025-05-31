@@ -1,4 +1,7 @@
 on:
+  push:
+    paths:
+      - '.github/workflows/build-ghidra-source.yml'
   workflow_dispatch:
 jobs:
   # https://github.com/NationalSecurityAgency/ghidra/blob/master/README.md#build
