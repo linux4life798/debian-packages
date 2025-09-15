@@ -1,4 +1,10 @@
-ghidra (11.3.2-7) UNRELEASED; urgency=medium
+ghidra (11.4.2) UNRELEASED; urgency=medium
+
+  * Bump version to 11.4.2 for https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_11.4.2_build
+
+ -- Craig Hesling <craig@hesling.com>  Mon, 15 Sep 2025 12:12:13 -0700
+
+ghidra (11.3.2-7) unstable; urgency=medium
 
   * Bump version to 11.3.2
   * Use pkg install file to install launcher executables
@@ -9,7 +15,7 @@ ghidra (11.3.2-7) UNRELEASED; urgency=medium
   * Remove execute permission from jar file, due to lintian complaint
   * Move ghidra from /usr/lib to /usr/share
 
- -- Craig Hesling <craig@hesling.com>  Sun, 04 May 2025 13:57:07 -0700
+ -- Craig Hesling <craig@hesling.com>  Mon, 15 Sep 2025 12:11:21 -0700
 
 ghidra (10.4-2) unstable; urgency=medium
 
