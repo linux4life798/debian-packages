@@ -23,6 +23,8 @@ override_dh_auto_install:
 
 	dh_auto_install
 
+# Speed up builds by disabling the strip step.
+override_dh_strip_nondeterminism:
 
 override_dh_fixperms:
 	dh_fixperms
