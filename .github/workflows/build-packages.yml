@@ -16,14 +16,24 @@ jobs:
       run: |
         sudo apt-get build-dep -y .
         sudo apt install -y wget
+
     - name: Download Ghidra
       working-directory: custom/ghidra
       run: ./get-ghidra.sh
-    - name: Build Packages
+    - name: Build Ghidra Package
       working-directory: custom/ghidra
       run: dpkg-buildpackage -b --no-sign
-    - name: Upload Packages
+    - name: Upload Ghidra Package
       uses: actions/upload-artifact@v4
       with:
         name: ghidra-debian-package
         path: custom/ghidra*.deb
+
+    - name: Build snapper-extra-config Package
+      working-directory: custom/snapper-extra-config
+      run: dpkg-buildpackage -b --no-sign
+    - name: Upload snapper-extra-config Package
+      uses: actions/upload-artifact@v4
+      with:
+        name: ghidra-debian-package
+        path: custom/snapper-extra-config*.deb
