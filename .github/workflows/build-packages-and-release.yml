@@ -29,20 +29,17 @@ jobs:
     - name: Build Ghidra Package
       working-directory: custom/ghidra
       run: dpkg-buildpackage -b --no-sign
-    - name: Upload Ghidra Package
-      uses: actions/upload-artifact@v4
-      with:
-        name: ghidra-debian-package
-        path: custom/ghidra*.deb
+
 
     - name: Build snapper-extra-config Package
       working-directory: custom/snapper-extra-config
       run: dpkg-buildpackage -b --no-sign
-    - name: Upload snapper-extra-config Package
+
+    - name: Upload Package Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: ghidra-debian-package
-        path: custom/snapper-extra-config*.deb
+        name: packages
+        path: custom/*.deb
 
     - name: Create GitHub Release
       if: startsWith(github.ref, 'refs/tags/')
