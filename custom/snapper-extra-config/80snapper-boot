@@ -1,0 +1,13 @@
+# Craig added on Sep 17, 2025.
+#
+# This uses snapper to do pre and post snapshots of the "boot" config/volume.
+# This mirrors what 80snapper config does for the "root" config/volume, but
+# applies it to the "boot" config.
+# See https://salsa.debian.org/debian/snapper/-/blob/debian/sid/debian/80snapper.
+#
+# When snapper is run without a config "-c root" argument it will default to the
+# "root" config, which is how the original 80snapper script functions.
+
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=770938
+  DPkg::Pre-Invoke  { "if [ -e /etc/default/snapper ]; then . /etc/default/snapper; fi; if [ -x /usr/bin/snapper ] && [ ! x$DISABLE_APT_SNAPSHOT = 'xyes' ] && [ -e /etc/snapper/configs/boot ]; then rm -f /var/tmp/snapper-apt-boot || true ; snapper -c boot create -d apt -c number -t pre -p > /var/tmp/snapper-apt-boot || true ; snapper -c boot cleanup number || true ; fi"; };
+  DPkg::Post-Invoke { "if [ -e /etc/default/snapper ]; then . /etc/default/snapper; fi; if [ -x /usr/bin/snapper ] && [ ! x$DISABLE_APT_SNAPSHOT = 'xyes' ] && [ -e /var/tmp/snapper-apt-boot ]; then snapper -c boot create -d apt -c number -t post --pre-number=`cat /var/tmp/snapper-apt-boot` || true ; snapper -c boot cleanup number || true ; fi"; };

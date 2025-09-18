@@ -1,0 +1,22 @@
+#!/bin/sh
+# systemd generator: instantiate snapper-boot@.service for each snapper config
+# Places symlinks under /run/systemd/generator so instances run on boot.
+# See systemd.generator(7)
+
+set -eu
+
+OUT="${1:-/run/systemd/generator}"  # normal output dir (early/late not used here)
+UNIT_TEMPLATE="/lib/systemd/system/snapper-boot@.service"
+[ -e "$UNIT_TEMPLATE" ] || UNIT_TEMPLATE="/usr/lib/systemd/system/snapper-boot@.service"
+
+CONFIG_DIR="/etc/snapper/configs"
+[ -d "$CONFIG_DIR" ] || exit 0
+
+mkdir -p "$OUT/multi-user.target.wants"
+
+for cfg in "$CONFIG_DIR"/*; do
+    [ -f "$cfg" ] || continue
+    name="$(basename "$cfg")"
+    # Create wants symlink for each config instance so it runs on boot
+    ln -sfn "$UNIT_TEMPLATE" "$OUT/multi-user.target.wants/snapper-boot@${name}.service"
+done

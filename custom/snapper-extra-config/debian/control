@@ -1,0 +1,20 @@
+Source: snapper-extra-config
+Section: admin
+Priority: optional
+Maintainer: Craig Hesling <craig@hesling.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/linux4life798/debian-packages
+Vcs-Git: https://github.com/linux4life798/debian-packages.git
+Rules-Requires-Root: no
+
+Package: snapper-extra-config
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, snapper
+Description: Snapper boot snapshot service and APT hook
+ This package provides:
+  - snapper-boot@.service templated unit to take a snapshot on boot
+  - an APT hook to perform pre/post snapshots for a 'boot' config (if present)
+ Instances are not enabled by default; enable explicitly, e.g.:
+  systemctl enable snapper-boot@root.service

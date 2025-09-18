@@ -1,0 +1,8 @@
+snapper-extra-config (1.0.0) unstable; urgency=medium
+
+  * Initial release
+    - Add templated unit snapper-boot@.service to snapshot on boot
+    - Add APT pre/post snapshot hook for 'boot' config
+  * Clean and simplify Debian packaging metadata
+
+ -- Craig Hesling <craig@hesling.com>  Thu, 18 Sep 2025 10:52:00 -0700

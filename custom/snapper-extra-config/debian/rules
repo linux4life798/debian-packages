@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+export DH_VERBOSE=1
+
+%:
+	dh $@
+
+# Ensure the systemd generator is executable after installation
+#override_dh_fixperms:
+#	dh_fixperms
+#	chmod 0755 debian/snapper-craig/lib/systemd/system-generators/snapper-boot-generator || true
