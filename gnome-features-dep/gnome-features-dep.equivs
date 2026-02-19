@@ -7,7 +7,7 @@ Priority: optional
 Standards-Version: 3.9.2
 
 Package: gnome-features-dep
-Version: 1.3
+Version: 1.4
 # Maintainer: Your Name <yourname@example.com>
 # Pre-Depends: <comma-separated list of packages>
 
@@ -23,9 +23,10 @@ Depends:
   gnome-shell-extension-system-monitor,
   gnome-shell-extension-caffeine,
   gnome-shell-extension-appindicator,
-  gnome-shell-extension-easyscreencast,
   dconf-editor,
   gnome-firmware
+#  gnome-shell-extension-easyscreencast,
+#
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
 # Provides: <comma-separated list of packages>
