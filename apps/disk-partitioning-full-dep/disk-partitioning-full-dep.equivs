@@ -1,0 +1,33 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+# Source: <source package name; defaults to package name>
+Section: misc
+Priority: optional
+# Homepage: <enter URL here; no default>
+Standards-Version: 3.9.2
+
+Package: disk-partitioning-full-dep
+Version: 1.9
+Maintainer: Craig Hesling <craig@hesling.com>
+# Pre-Depends: <comma-separated list of packages>
+# We want to suppot all suggested/reccomended
+# To fully support gnome disk utility, we need to fully support udisks3 suggested and reccomeneds.
+Depends: gnome-disk-utility, gparted, smartmontools, nvme-cli
+Recommends: dosfstools, e2fsprogs, eject, libblockdev-crypto2, ntfs-3g, policykit-1, libpam-systemd, exfatprogs, f2fs-tools,
+ libblockdev-mdraid2, mdadm, nilfs-tools, reiserfsprogs,
+ udftools, udisks2-bcache, udisks2-btrfs, udisks2-lvm2, udisks2-zram, xfsprogs,
+ btrfs-progs, duperemove, fdupes, jdupes, hdparm
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+# Architecture: all
+# Multi-Arch: <one of: foreign|same|allowed>
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Links: <pair of space-separated paths; First is path symlink points at, second is filename of link>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: Dependencies to support the best UI partitioning
