@@ -1,0 +1,30 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+# Source: <source package name; defaults to package name>
+Section: misc
+Priority: optional
+# Homepage: <enter URL here; no default>
+Standards-Version: 3.9.2
+
+Package: virtualization-dep
+Version: 1.13
+Maintainer: Craig Hesling <craig@hesling.com>
+# Pre-Depends: <comma-separated list of packages>
+Depends: virt-manager, gir1.2-secret-1, gnome-keyring, python3-guestfs, ssh-askpass, virt-viewer, swtpm, swtpm-tools, spice-webdavd, gnome-boxes, libguestfs-tools, libguestfs-rescue, bridge-utils,
+  virtiofsd,
+  qemu-system-arm, qemu-efi-aarch64, qemu-efi-arm
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+# Architecture: all
+# Multi-Arch: <one of: foreign|same|allowed>
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: Depends on common avirtualization pkgs
+  This packages depends on all of the common packages I need
+  for virtualization.
