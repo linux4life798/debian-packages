@@ -7,17 +7,24 @@ Priority: optional
 Standards-Version: 3.9.2
 
 Package: linux-dep
-Version: 1.5
+Version: 1.8
 aintainer: Craig Hesling <craig@hesling.com>
 # Pre-Depends: <comma-separated list of packages>
 # From:
 # https://wiki.debian.org/BuildADebianKernelPackage
 # libgnutls28-dev is for u-boot
+#
+# Rust Support Needs
+# https://www.kernel.org/doc/Documentation/rust/quick-start.rst
+# The issue is that the "rustup" pkg conflicts with
+# the stated dependencies "rustc rust-src bindgen rustfmt rust-clippy".
+#
 Depends: build-essential, linux-source, bc, kmod, cpio, flex, libncurses5-dev, libelf-dev, libssl-dev, dwarves, bison,
   linux-headers-amd64,
   git, git-email,
   libgnutls28-dev,
-  libdw-dev
+  libdw-dev,
+  device-tree-compiler
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
 # Provides: <comma-separated list of packages>
