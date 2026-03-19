@@ -36,7 +36,7 @@ dpkg-buildpackage -Tclean
 To update to a new version of Ghidra:
 
 ```bash
-sudo apt install git libxml2-utils
+#sudo apt install git libxml2-utils
 
 # Check upstream status.
 uscan --report-status
