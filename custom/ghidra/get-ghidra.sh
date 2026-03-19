@@ -11,7 +11,7 @@ SCRIPT_DIR="$(dirname -- "${BASH_SOURCE[0]}")"
 
 cd "${SCRIPT_DIR}"
 
-case "$1" in
+case "${1:-}" in
   "")
     uscan --download-current-version
     ;;
