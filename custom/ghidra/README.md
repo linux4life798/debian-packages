@@ -59,12 +59,12 @@ if [[ "${LATEST_VERSION}" != "${LOCAL_VERSION}" ]]; then
   )
 
   for line in "${lines[@]}"; do
-    dch --append "$line"
+    dch --append "${line}"
   done
 
   dpkg-buildpackage -us -uc -b
 else
-  printf "Already at latest version: %s (%s)\n" "$LOCAL_VERSION" "$LATEST_URL"
+  printf "Already at latest version: %s (%s)\n" "${LOCAL_VERSION}" "${LATEST_URL}"
 fi
 
 dch -r
