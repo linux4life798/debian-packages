@@ -1,16 +1,24 @@
 #!/bin/bash
-# Script to download Ghidra for building the Debian package
-# Default version is 11.3.2, but can be changed by passing a parameter
+# Download the Ghidra archive for the package version in debian/changelog.
+# Usage:
+#   ./get-ghidra.sh           # download changelog version
+#   ./get-ghidra.sh latest    # download latest upstream version
+#   ./get-ghidra.sh 12.0.4    # download a specific version
 
-VERSION=${1:-11.4.2}
-RELEASE_DATE=${2:-20250826}
+set -euo pipefail
 
-echo "Downloading Ghidra ${VERSION} (build date: ${RELEASE_DATE})..."
-wget -c "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${VERSION}_build/ghidra_${VERSION}_PUBLIC_${RELEASE_DATE}.zip"
+SCRIPT_DIR="$(dirname -- "${BASH_SOURCE[0]}")"
 
-if [ $? -eq 0 ]; then
-    echo "Download complete: ghidra_${VERSION}_PUBLIC_${RELEASE_DATE}.zip"
-else
-    echo "Download failed. Please check the version and release date."
-    exit 1
-fi
+cd "${SCRIPT_DIR}"
+
+case "$1" in
+  "")
+    uscan --download-current-version
+    ;;
+  latest)
+    uscan --download
+    ;;
+  *)
+    uscan --download-version "$1"
+    ;;
+esac

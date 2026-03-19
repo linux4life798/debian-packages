@@ -4,6 +4,10 @@
 # See debhelper(7) for more info.
 export DH_VERBOSE = 1
 
+UPSTREAM_VERSION := $(shell dpkg-parsechangelog -S Version | sed 's/-[^-]*$$//')
+# The uscan repacked tarball.
+ORIG_TARBALL = $(CURDIR)/../ghidra_$(UPSTREAM_VERSION).orig.tar.xz
+
 %:
 	dh $@
 
@@ -11,9 +15,9 @@ override_dh_auto_build:
 	# No build needed, using pre-built binary
 
 override_dh_auto_install:
-	# Extract the Ghidra zip to the debian/ghidra directory
+	# Extract the uscan repacked upstream tarball to the debian/ghidra directory
 	mkdir -p debian/ghidra/usr/share
-	unzip $(CURDIR)/ghidra_*_PUBLIC_*.zip -d debian/ghidra/usr/share/
+	tar -xf $(ORIG_TARBALL) -C debian/ghidra/usr/share/
 	mv debian/ghidra/usr/share/ghidra_*_PUBLIC debian/ghidra/usr/share/ghidra
 
 	# Create /etc/ghidra directory, move launch.properties there, and symlink it
