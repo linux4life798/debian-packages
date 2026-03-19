@@ -19,6 +19,11 @@ dpkg-buildpackage -us -uc -b
 sudo apt install -f ../ghidra_*_amd64.deb
 ```
 
+Cleanup
+```bash
+dpkg-buildpackage -Tclean
+```
+
 ## Package Details
 
 - Ghidra files are installed to `/usr/share/ghidra/`
