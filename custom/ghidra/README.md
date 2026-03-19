@@ -10,7 +10,7 @@ This repository contains the packaging files needed to build a Debian package fo
 
 
 ```bash
-sudo apt install debhelper-compat devscripts ca-certificates default-jdk unzip
+sudo apt build-dep -y .
 ./get-ghidra.sh
 dpkg-buildpackage -us -uc -b
 ```
