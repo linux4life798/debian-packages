@@ -49,18 +49,20 @@ LATEST_VERSION="$(xmllint --xpath "string(//upstream-version)" - <<<"$DEHS")"
 LATEST_URL="$(xmllint --xpath "string(//upstream-url)" - <<<"$DEHS")"
 LAST_TAG="ghidra-${LOCAL_VERSION%%-*}"
 
-if [[ "$LATEST_VERSION" != "$LOCAL_VERSION" ]]; then
-  dch -v "$LATEST_VERSION" "New upstream release: $LATEST_VERSION"
+if [[ "${LATEST_VERSION}" != "${LOCAL_VERSION}" ]]; then
+  echo "Using upstream release ${LATEST_URL}"
+  dch -v "${LATEST_VERSION}" "New upstream release ${LATEST_VERSION}"
+#   ./get-ghidra.sh
 
-  while IFS= read -r subject; do
-    dch --append "$subject"
-  done < <(
-    git log --format='%s' --no-merges "${LAST_TAG}..HEAD" -- custom/ghidra
+  mapfile -t lines < <(
+    git log --format='%s' --no-merges "${LAST_TAG}..HEAD" -- . | sed 's/^ghidra: //g'
   )
 
-  ./get-ghidra.sh
+  for line in "${lines[@]}"; do
+    dch --append "$line"
+  done
+
   dpkg-buildpackage -us -uc -b
-  # git tag "ghidra-$LATEST_VERSION"
 else
   printf "Already at latest version: %s (%s)\n" "$LOCAL_VERSION" "$LATEST_URL"
 fi
