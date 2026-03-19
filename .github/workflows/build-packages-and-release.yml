@@ -21,6 +21,7 @@ jobs:
       working-directory: custom/ghidra
       run: |
         sudo apt-get build-dep -y .
+        sudo apt-get install -y devscripts
         sudo apt install -y wget
 
     - name: Download Ghidra
