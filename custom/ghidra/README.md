@@ -69,8 +69,9 @@ fi
 
 dch -r
 
-
 git add debian/changelog
 git commit -m"ghidra: Release upstream ${LATEST_VERSION}"
 git tag "ghidra-${LATEST_VERSION}" -m"Ghidra ${LATEST_VERSION}"
+git push
+git push origin "ghidra-${LATEST_VERSION}"
 ```
