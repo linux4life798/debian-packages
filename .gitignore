@@ -1,2 +1,4 @@
 *.deb
 *.deb.asc
+*.changes
+*.buildinfo
