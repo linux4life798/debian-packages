@@ -44,7 +44,7 @@ uscan --report-status
 
 DEHS="$(uscan --dehs)"
 
-LOCAL_VERSION="$(xmllint --xpath "string(//debian-version)" - <<<"$DEHS")"
+LOCAL_VERSION="$(xmllint --xpath "string(//debian-uversion)" - <<<"$DEHS")"
 LATEST_VERSION="$(xmllint --xpath "string(//upstream-version)" - <<<"$DEHS")"
 LATEST_URL="$(xmllint --xpath "string(//upstream-url)" - <<<"$DEHS")"
 LAST_TAG="ghidra-${LOCAL_VERSION%%-*}"
