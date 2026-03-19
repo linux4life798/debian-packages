@@ -68,4 +68,9 @@ else
 fi
 
 dch -r
+
+
+git add debian/changelog
+git commit -m""
+git tag "ghidra-${LATEST_VERSION}"
 ```
