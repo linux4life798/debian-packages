@@ -1,4 +1,10 @@
-ghidra (12.0.4) UNRELEASED; urgency=medium
+ghidra (12.0.4-1) unstable; urgency=medium
+
+  * Add debian dep for uscan
+
+ -- Craig Hesling <craig@hesling.com>  Thu, 19 Mar 2026 16:52:14 -0700
+
+ghidra (12.0.4) unstable; urgency=medium
 
   * Bump version to 11.4.2 for https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_11.4.2_build
   * New upstream release 12.0.4
@@ -17,7 +23,7 @@ ghidra (12.0.4) UNRELEASED; urgency=medium
   * Add slopware README for ghidra pkg
   * Disable the symbol strip step
 
- -- Craig Hesling <craig@hesling.com>  Thu, 19 Mar 2026 16:44:29 -0700
+ -- Craig Hesling <craig@hesling.com>  Thu, 19 Mar 2026 16:50:30 -0700
 
 ghidra (11.3.2-7) unstable; urgency=medium
 
