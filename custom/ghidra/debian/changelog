@@ -1,8 +1,23 @@
-ghidra (11.4.2) UNRELEASED; urgency=medium
+ghidra (12.0.4) UNRELEASED; urgency=medium
 
   * Bump version to 11.4.2 for https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_11.4.2_build
+  * New upstream release 12.0.4
+  * More reasonable final tagging steps
+  * More consistent bash variable braces
+  * Add WIP README git tagging
+  * Fix readme maintainer changelog build
+  * Fix local version variable
+  * Simplify installing build deps in readme
+  * Comment out apt install line in readme
+  * Add cleanup line to README
+  * Fix broken get-ghidra $1 unbound
+  * Change jdk 17 requirement to just default-jdk
+  * Make README actually useful
+  * Fully rely on uscan to download releases
+  * Add slopware README for ghidra pkg
+  * Disable the symbol strip step
 
- -- Craig Hesling <craig@hesling.com>  Mon, 15 Sep 2025 12:12:13 -0700
+ -- Craig Hesling <craig@hesling.com>  Thu, 19 Mar 2026 16:44:29 -0700
 
 ghidra (11.3.2-7) unstable; urgency=medium
 
